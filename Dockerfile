@@ -2,7 +2,7 @@
 #
 # Runs redis-server on port 6379.
 
-FROM       d11wtq/ubuntu
+FROM       d11wtq/ubuntu:14.04
 MAINTAINER Chris Corbyn <chris@w3style.co.uk>
 
 ENV REDIS_VER 2.8.4

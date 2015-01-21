@@ -48,18 +48,12 @@ container.
 
 ### Client Access
 
-If you need to try something in the redis-cli client, the intended way to do
-this is to use two containers in a client-server setup. Start the server
-container with a name, then start a second container linking to that name, but
-running 'bash', or 'redis-cli' instead of the default command.
-
-Connecting a client to the above server would look like this:
+If you need to try something in the redis-cli client, ths easiest way to do
+this is to use `docker exec`:
 
 ```
--bash$ docker run -ti \
->   --link redis:server \
->   d11wtq/redis \
->   redis-cli -h server
-
-server:6379>
+-bash$ docker exec -ti redis redis-cli
+127.0.0.1:6379> PING
+PONG
+127.0.0.1:6379>
 ```
